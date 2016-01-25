@@ -1,0 +1,107 @@
+################################################################
+# Global configuration
+################################################################
+
+# Reverse proxy port
+#
+# Optional
+# Default: ":80"
+#
+port = ":80"
+
+# Timeout in seconds.
+# Duration to give active requests a chance to finish during hot-reloads
+#
+# Optional
+# Default: 10
+#
+graceTimeOut = 10
+
+# Traefik logs file
+# If not defined, logs to stdout
+#
+# Optional
+#
+traefikLogsFile = "/var/log/traefik.log"
+
+# Access logs file
+#
+# Optional
+#
+accessLogsFile = "/var/log/access.log"
+
+# Log level
+#
+# Optional
+# Default: "ERROR"
+#
+logLevel = "ERROR"
+
+# SSL certificates and keys
+# You may add several certificate/key pairs to terminate HTTPS for multiple domain names using TLS SNI
+#
+# Optional
+#
+# [[certificates]]
+# CertFile = "traefik.crt"
+# KeyFile = "traefik.key"
+
+# Backends throttle duration: minimum duration between 2 events from providers
+# before applying a new configuration. It avoids unnecessary reloads if multiples events
+# are sent in a short amount of time.
+#
+# Optional
+# Default: "2s"
+#
+# ProvidersThrottleDuration = "5s"
+
+
+################################################################
+# Web configuration backend
+################################################################
+
+# Enable web configuration backend
+#
+# Optional
+#
+# [web]
+
+# Web administration port
+#
+# Required
+#
+# address = ":8080"
+
+# SSL certificate and key used
+#
+# Optional
+#
+# CertFile = "traefik.crt"
+# KeyFile = "traefik.key"
+
+
+[etcd]
+
+# Etcd server endpoint
+#
+# Required
+#
+endpoint = "127.0.0.1:4001"
+
+# Enable watch Etcd changes
+#
+# Optional
+#
+watch = true
+
+# Prefix used for KV store.
+#
+# Optional
+#
+prefix = "/proxy"
+
+# Override default configuration template. For advanced users :)
+#
+# Optional
+#
+# filename = "etcd.tmpl"

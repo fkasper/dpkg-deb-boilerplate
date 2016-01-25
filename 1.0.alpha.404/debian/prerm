@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+echo "Disabling Traefik Service"
+
+systemctl stop traefik
+systemctl disable traefik
