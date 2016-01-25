@@ -1,0 +1,13 @@
+[Unit]
+Description=Træfɪk, a modern reverse proxy http://traefik.io/
+Documentation=http://traefik.github.io/
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/traefik /etc/traefik.toml
+Restart=always
+TimeoutStartSec=5
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
